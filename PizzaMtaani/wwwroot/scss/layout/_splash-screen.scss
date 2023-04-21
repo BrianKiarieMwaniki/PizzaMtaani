@@ -1,0 +1,36 @@
+﻿.splash-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-image: radial-gradient(circle, var(--primary-color),var(--secondary-color));
+
+    & figure {
+        & img {
+            width: 48rem;
+            height: auto;
+
+            animation:  pulseAndrotate 4s ease infinite;
+        }
+
+        & figcaption{
+            margin-top: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: .25rem;
+            color: var(--white-color);
+        }
+    }
+
+    &__welcome-text{
+        margin-top: 5rem;
+        font-weight: 400;
+        font-size: 4rem;
+        text-align: center;
+        color: var(--dark-grey);
+    }
+}

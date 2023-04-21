@@ -1,0 +1,34 @@
+﻿:root {
+  --base-font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --primary-color: #c44343;
+  --secondary-color: #ef4545;
+  --accent-color: #a30303;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-family: var(--base-font);
+  font-weight: 400;
+  overflow-y: auto;
+  position: relative;
+}
