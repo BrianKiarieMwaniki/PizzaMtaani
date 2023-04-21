@@ -1,31 +1,59 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿<nav class="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">PizzaMtaani</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="">Pizza Mtaani</a>
+
+        <div class="navbar-links">
+            <ul class="navbar-nav navbar-links__ul">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        Home
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="design">
+                        Design A Pizza
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="contact">
+                        Contact
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-actions">
+           <button class="navbar-cart">
+               <svg class="navbar-cart__icon">
+                    <use xlink:href="images/carts.svg#icon-cart"></use>
+               </svg>
+           </button>
+        </div>
+        <button title="Navigation menu" type="button" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <svg class="navbar-toggler__icon">
+                <use xlink:href="images/options.svg#icon-menu1"></use>
+            </svg>
         </button>
     </div>
-</div>
-
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    <div class="@NavMenuCssClass navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    Home
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="design">
+                    Design A Pizza
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="contact">
+                    Contact
+                </NavLink>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 @code {
     private bool collapseNavMenu = true;
