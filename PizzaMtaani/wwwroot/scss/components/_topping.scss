@@ -1,0 +1,53 @@
+﻿.topping-control {
+    max-width: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: .5rem;
+        margin-bottom: .05rem;
+    }
+
+    &__img-holder {
+        background-color: var(--white-color);
+
+        & img {
+            background-color: inherit;
+            width: 12rem;
+            height: auto;
+        }
+    }
+
+    &__price-selector{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: .5rem;
+
+
+        & .select{
+            border: 1px solid #b0ebf6;
+            font-size: 1.25rem;
+            padding: .25rem 0rem;
+            margin-right: 1rem;
+            border-radius: 2px;
+        }
+        
+        & .price{
+            margin: 0;
+            font-size: 1.25rem;
+
+            & span{
+                font-weight: 600;
+                color: var(--price-color);
+            }
+        }
+    }
+}

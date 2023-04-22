@@ -1,0 +1,64 @@
+﻿@if (Toppings is not null)
+{
+    <div class="toppings">
+        <div class="toppings__col">
+            <div class="title">
+                <p>Basic</p>
+            </div>
+            <ul>
+                @if (_basicToppings is not null)
+                {
+                    foreach (var topping in _basicToppings)
+                    {
+                        <li>
+                            <ToppingControl Topping="topping" />
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="toppings__col">
+            <div class="title">
+                <p>Deluxe</p>
+            </div>
+            <ul>
+                @if (_deluxeToppings is not null)
+                {
+                    foreach (var topping in _deluxeToppings)
+                    {
+                        <li>
+                            <ToppingControl Topping="topping" />
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+
+}
+
+@code {
+
+    [Parameter]
+    public List<PizzaTopping>? Toppings { get; set; }
+
+    private List<PizzaTopping> _basicToppings { get; set; } = new();
+    private List<PizzaTopping> _deluxeToppings { get; set; } = new();
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        GroupToppings();
+    }
+
+
+    private void GroupToppings()
+    {
+        if (Toppings is null) return;
+
+        _basicToppings = Toppings.Where(t => !t.IsDeluxe).ToList();
+        _deluxeToppings = Toppings.Where(t => t.IsDeluxe).ToList();
+    }
+
+}
