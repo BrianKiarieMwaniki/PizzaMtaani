@@ -1,9 +1,9 @@
-﻿<div class="topping-control" draggable="true">
+﻿<div class="topping-control" draggable="true" title="@Topping.Name" @ondragstart="@(() => HandleDragStart(Topping))">
     <div class="topping-control__title">
         <p>@Topping.Name</p>
     </div>
     <div class="topping-control__img-holder">
-        <img src="@GetToppingImg(Topping.Name)" alt="topping" />
+        <img src="@GetToppingImg(Topping.Name)" alt="topping" draggable="false"/>
     </div>
     <div class="topping-control__price-selector">
         <select class="select" @bind-Value="@Topping.SelectedSize" @bind-Value:event="onchange">

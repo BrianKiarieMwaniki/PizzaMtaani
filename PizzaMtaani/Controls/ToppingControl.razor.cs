@@ -1,37 +1,25 @@
 using Microsoft.AspNetCore.Components;
+using PizzaMtaani.Components;
 using PizzaMtaani.Models;
 
 namespace PizzaMtaani.Controls
 {
     public partial class ToppingControl : ComponentBase
     {
+        [CascadingParameter]
+        public PizzaContainer Container { get; set; }
+
         [Parameter]
         public PizzaTopping? Topping { get; set; }
 
-
-        private void HandleSizeChange(ChangeEventArgs e)
+        private void HandleDragStart(PizzaTopping topping)
         {
-            var selectedValue = e.Value?.ToString();
-
-            if (selectedValue == string.Empty) return;
-
-            Topping.SelectedSize = selectedValue;
-
-            StateHasChanged();
+            Container.PizzaTopping = topping;
         }
-
 
         private string GetToppingImg(string name)
         {
-            if (string.IsNullOrEmpty(name)) return string.Empty;
-
-            //if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
-            //else if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
-            //else if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
-            //else if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
-            //else if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
-            //if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
-            //if (name.Equals("cheese", StringComparison.OrdinalIgnoreCase)) return "images/toppings/cheese.png";
+            if (string.IsNullOrEmpty(name)) return string.Empty;          
 
             switch(name.ToLower())
             {

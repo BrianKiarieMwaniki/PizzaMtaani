@@ -1,0 +1,35 @@
+﻿<div class="pizza-designer">
+    <select class="select" @bind-Value="@Pizza.Size" @bind-Value:event="onchange">
+        @foreach (var size in Enum.GetValues(typeof(PizzaSize)))
+        {
+            <option value="@size">@size.ToString() @@ KSHS @Pizza.Price.ToString("0.00")</option>
+        }
+    </select>
+    <div class="pizza-designer__canvas-container">
+        <div class="pizza-designer__canvas" dropzone="move" 
+             ondragover="event.preventDefault();"
+             @ondrop="HandleDrop"
+             @ondragenter="HandleDragEnter"
+             @ondragleave="HandleDragLeave">
+            <img src="/icon-192.png" alt="pizza" />
+        </div>
+        @if(Pizza.Toppings != null)
+        {
+            <div class="pizza-designer__topping-container">
+                @foreach (var topping in Pizza.Toppings)
+                {
+                    <ToppingControl Topping="topping"/>
+                }
+                </div>
+        }
+    </div>
+    <div class="pizza-designer__actions">
+        <button class="btn-clear">Clear</button>
+        <button class="btn-add-to-cart">Add To Cart</button>
+        <p class="price">
+            KSHS <span>@Pizza.TotalNetPrice.ToString("0.00")</span>
+        </p>
+    </div>
+</div>
+
+

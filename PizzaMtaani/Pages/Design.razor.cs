@@ -7,11 +7,21 @@ namespace PizzaMtaani.Pages
     {
         private List<PizzaTopping> Toppings { get; set; } = new();
 
+        private Pizza _pizza;
+
         protected override void OnInitialized()
         {
             base.OnInitialized();
 
             InitializeToppingList();
+
+            _pizza = new Pizza();
+            _pizza.Toppings = new List<PizzaTopping>();
+        }
+
+        private void HandleOnPizzaToppingAdded()
+        {
+            StateHasChanged();
         }
 
         private void InitializeToppingList()

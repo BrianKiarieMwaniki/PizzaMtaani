@@ -1,12 +1,15 @@
 ﻿@page "/design"
 
 <div class="design-pizza">
+    <PizzaContainer Pizza="_pizza" OnPizzaToppingAdded="HandleOnPizzaToppingAdded">
+
     <div class="design-pizza__container">
         <div class="design-pizza__design-column">
-
+            <PizzaDesigner/>
         </div>
         <div class="design-pizza__toppings-column">
             <PizzaToppingsComponent Toppings="Toppings"/>
         </div>
     </div>
+    </PizzaContainer>
 </div>
