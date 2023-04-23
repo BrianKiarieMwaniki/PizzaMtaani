@@ -1,0 +1,15 @@
+﻿@inject NavigationManager _navigationManager
+
+<button class="navbar-cart" @onclick="NavigateToOderPage">
+    <svg class="navbar-cart__icon">
+        <use xlink:href="images/carts.svg#icon-cart"></use>
+    </svg>
+    <span>@ItemsCount</span>
+</button>
+
+@code {
+    [Parameter]
+    public int ItemsCount { get; set; }
+
+    private void NavigateToOderPage() => _navigationManager.NavigateTo("/order");
+}

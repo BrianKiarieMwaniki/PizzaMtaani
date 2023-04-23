@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Components;
-using PizzaMtaani.Models;
+using PizzaMtaani.CoreBusiness.Models;
 
 namespace PizzaMtaani.Components
 {

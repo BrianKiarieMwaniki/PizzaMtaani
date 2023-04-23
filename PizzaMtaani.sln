@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaMtaani", "PizzaMtaani\PizzaMtaani.csproj", "{704CF36F-3F65-4CDC-AB0D-819D70F8CFDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaMtaani.StateStore", "PizzaMtaani.StateStore\PizzaMtaani.StateStore.csproj", "{00E66D78-8BAB-4E0B-9D3F-38F49ECDEE4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaMtaani.CoreBusiness", "PizzaMtaani.CoreBusiness\PizzaMtaani.CoreBusiness.csproj", "{F272EF51-DABD-4788-B7A2-03C26E13BACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaMtaani.UseCases", "PizzaMtaani.UseCases\PizzaMtaani.UseCases.csproj", "{75236A06-C73E-46D2-B46C-C328531EC3EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{704CF36F-3F65-4CDC-AB0D-819D70F8CFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704CF36F-3F65-4CDC-AB0D-819D70F8CFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{704CF36F-3F65-4CDC-AB0D-819D70F8CFDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E66D78-8BAB-4E0B-9D3F-38F49ECDEE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E66D78-8BAB-4E0B-9D3F-38F49ECDEE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E66D78-8BAB-4E0B-9D3F-38F49ECDEE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E66D78-8BAB-4E0B-9D3F-38F49ECDEE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F272EF51-DABD-4788-B7A2-03C26E13BACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F272EF51-DABD-4788-B7A2-03C26E13BACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F272EF51-DABD-4788-B7A2-03C26E13BACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F272EF51-DABD-4788-B7A2-03C26E13BACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75236A06-C73E-46D2-B46C-C328531EC3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75236A06-C73E-46D2-B46C-C328531EC3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75236A06-C73E-46D2-B46C-C328531EC3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75236A06-C73E-46D2-B46C-C328531EC3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

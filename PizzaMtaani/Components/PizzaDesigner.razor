@@ -2,7 +2,7 @@
     <select class="select" @bind-Value="@Pizza.Size" @bind-Value:event="onchange">
         @foreach (var size in Enum.GetValues(typeof(PizzaSize)))
         {
-            <option value="@size">@size.ToString() @@ KSHS @Pizza.Price.ToString("0.00")</option>
+            <option value="@size">@size.ToString() @@ KES @Pizza.GetPrice((PizzaSize)size).ToString("0.00")</option>
         }
     </select>
     <div class="pizza-designer__canvas-container">
@@ -18,18 +18,20 @@
             <div class="pizza-designer__topping-container">
                 @foreach (var topping in Pizza.Toppings)
                 {
-                    <ToppingControl Topping="topping"/>
+                    <MinimizedToppingControl Topping="topping"/>
                 }
-                </div>
+            </div>
         }
     </div>
     <div class="pizza-designer__actions">
-        <button class="btn-clear">Clear</button>
-        <button class="btn-add-to-cart">Add To Cart</button>
+        <button class="btn btn-clear">Clear</button>
+        <button class="btn btn-order" @onclick=HandlePizzaAddToCart>Add To Cart</button>
         <p class="price">
-            KSHS <span>@Pizza.TotalNetPrice.ToString("0.00")</span>
+            KES <span>@Pizza.TotalNetPrice.ToString("0.00")</span>
         </p>
+
     </div>
+    <p class="pizza-design__pizza-name">@Pizza.Name</p>
 </div>
 
 

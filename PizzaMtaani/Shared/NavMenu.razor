@@ -22,11 +22,7 @@
             </ul>
         </div>
         <div class="navbar-actions">
-           <button class="navbar-cart">
-               <svg class="navbar-cart__icon">
-                    <use xlink:href="images/carts.svg#icon-cart"></use>
-               </svg>
-           </button>
+           <CartNavComponent ItemsCount="itemsCount"/>
         </div>
         <button title="Navigation menu" type="button" class="navbar-toggler" @onclick="ToggleNavMenu">
             <svg class="navbar-toggler__icon">
@@ -55,13 +51,4 @@
     </div>
 </nav>
 
-@code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
