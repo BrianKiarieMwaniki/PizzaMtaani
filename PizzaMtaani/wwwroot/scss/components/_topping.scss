@@ -51,3 +51,32 @@
         }
     }
 }
+
+.minimized-topping {
+    width: 6rem;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .25rem .75rem;
+
+    &__img {
+        width: 4rem;
+        height: auto;
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__price {
+        margin-bottom: 0;
+
+        & span{
+            color: var(--price-color);
+        }
+    }
+}

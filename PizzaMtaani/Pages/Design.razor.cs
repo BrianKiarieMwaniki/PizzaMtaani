@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Components;
-using PizzaMtaani.Models;
+using PizzaMtaani.CoreBusiness.Models;
 
 namespace PizzaMtaani.Pages
 {
@@ -28,6 +28,7 @@ namespace PizzaMtaani.Pages
         {
             var cheeseToppings = new PizzaTopping
             {
+                Id = 1,
                 Name = "Cheese",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -39,6 +40,7 @@ namespace PizzaMtaani.Pages
             };
             var pepperoniToppings = new PizzaTopping
             {
+                Id = 2,
                 Name = "Pepperoni",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -50,6 +52,7 @@ namespace PizzaMtaani.Pages
             };
             var hamToppings = new PizzaTopping
             {
+                Id = 3,
                 Name = "Ham",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -61,6 +64,7 @@ namespace PizzaMtaani.Pages
             };
             var pineappleToppings = new PizzaTopping
             {
+                Id = 4,
                 Name = "Pineapple",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -72,6 +76,7 @@ namespace PizzaMtaani.Pages
             };
             var sausageToppings = new PizzaTopping
             {
+                Id = 5,
                 Name = "Sausage",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -83,6 +88,7 @@ namespace PizzaMtaani.Pages
             };
             var fetaCheeseToppings = new PizzaTopping
             {
+                Id = 6,
                 Name = "Feta Cheese",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -94,6 +100,7 @@ namespace PizzaMtaani.Pages
             };
             var tomatoesToppings = new PizzaTopping
             {
+                Id = 7,
                 Name = "Tomatoes",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -105,6 +112,7 @@ namespace PizzaMtaani.Pages
             };
             var olivesToppings = new PizzaTopping
             {
+                Id = 8,
                 Name = "Olives",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>

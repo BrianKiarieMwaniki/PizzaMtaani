@@ -1,0 +1,44 @@
+﻿@page "/order"
+
+<div class="order px-lg-4 mx-auto" style="width: 50%;">
+    <h1>Receipt</h1>
+    <table class="table  table-striped ">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (_order?.LineItems != null && _order.LineItems.Count > 0)
+            {
+                foreach (var item in _order.LineItems)
+                {
+                    <tr>
+                        <td colspan="2">@item.Pizza.Name</td>
+                        <td>KES @item.Price.ToString("0.00")</td>
+                    </tr>
+                }
+                <tr>
+                    <td>SUB-TOTAL</td>
+                    <td>KES @_order.SubTotal.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>VAT</td>
+                    <td>KES @_order.VAT.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>TOTAL</td>
+                    <td>KES @_order.Total.ToString("0.00")</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <button class="btn btn-success mt-5 px-2 w-100">PLACE ORDER</button>
+
+</div>
+
+

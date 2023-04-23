@@ -1,9 +1,9 @@
-﻿namespace PizzaMtaani.Models
+﻿namespace PizzaMtaani.CoreBusiness.Models
 {
 #nullable disable
     public class PizzaTopping
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public List<KeyValuePair<string, decimal>> Prices { get; set; }
         public bool IsDeluxe { get; set; } = false;
