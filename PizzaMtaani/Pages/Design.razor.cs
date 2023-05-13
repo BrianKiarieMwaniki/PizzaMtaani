@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using PizzaMtaani.CoreBusiness.Entities;
 using PizzaMtaani.CoreBusiness.Models;
 
 namespace PizzaMtaani.Pages
@@ -7,7 +8,7 @@ namespace PizzaMtaani.Pages
     {
         private List<PizzaTopping> Toppings { get; set; } = new();
 
-        private Pizza _pizza;
+        private Pizza? _pizza;
 
         protected override void OnInitialized()
         {
@@ -16,7 +17,7 @@ namespace PizzaMtaani.Pages
             InitializeToppingList();
 
             _pizza = new Pizza();
-            _pizza.Toppings = new List<PizzaTopping>();
+            _pizza.Toppings = new List<Topping>();            
         }
 
         private void HandleOnPizzaToppingAdded()
@@ -28,7 +29,7 @@ namespace PizzaMtaani.Pages
         {
             var cheeseToppings = new PizzaTopping
             {
-                Id = 1,
+                Id = new Guid("065ecfc3-4ca7-4d6e-9abb-c3305297a1c2"),
                 Name = "Cheese",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -40,7 +41,7 @@ namespace PizzaMtaani.Pages
             };
             var pepperoniToppings = new PizzaTopping
             {
-                Id = 2,
+                Id = new Guid("b4ecc2f2-ae42-4a01-999d-526faf0645a2"),
                 Name = "Pepperoni",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -52,7 +53,7 @@ namespace PizzaMtaani.Pages
             };
             var hamToppings = new PizzaTopping
             {
-                Id = 3,
+                Id = new Guid("602d7532-4215-4d7e-a07d-971b0b5ef735"),
                 Name = "Ham",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -64,7 +65,7 @@ namespace PizzaMtaani.Pages
             };
             var pineappleToppings = new PizzaTopping
             {
-                Id = 4,
+                Id = new Guid("0fb6bbd4-6296-413d-abcb-efd86654ee71"),
                 Name = "Pineapple",
                 IsDeluxe = false,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -76,7 +77,7 @@ namespace PizzaMtaani.Pages
             };
             var sausageToppings = new PizzaTopping
             {
-                Id = 5,
+                Id = new Guid("58606549-05c2-40ed-ae05-1dfda3a6cb7c"),
                 Name = "Sausage",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -88,7 +89,7 @@ namespace PizzaMtaani.Pages
             };
             var fetaCheeseToppings = new PizzaTopping
             {
-                Id = 6,
+                Id = new Guid("065ecfc3-4ca7-4d6e-9abb-c3305297a1c2"),
                 Name = "Feta Cheese",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -100,7 +101,7 @@ namespace PizzaMtaani.Pages
             };
             var tomatoesToppings = new PizzaTopping
             {
-                Id = 7,
+                Id = new Guid("3782341a-f2ca-46a0-a87e-9bc04e15ec8a"),
                 Name = "Tomatoes",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>
@@ -112,7 +113,7 @@ namespace PizzaMtaani.Pages
             };
             var olivesToppings = new PizzaTopping
             {
-                Id = 8,
+                Id = new Guid("5c3f7242-d9dc-482d-b2bb-95fb6459f098"),
                 Name = "Olives",
                 IsDeluxe = true,
                 Prices = new List<KeyValuePair<string, decimal>>

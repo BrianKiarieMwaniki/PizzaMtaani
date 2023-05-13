@@ -1,5 +1,6 @@
 ﻿using Microsoft.JSInterop;
 using Newtonsoft.Json;
+using PizzaMtaani.CoreBusiness.Entities;
 using PizzaMtaani.CoreBusiness.Models;
 using PizzaMtaani.UseCases.ShoppingCart;
 

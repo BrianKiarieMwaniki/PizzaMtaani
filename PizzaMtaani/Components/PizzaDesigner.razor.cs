@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using PizzaMtaani.CoreBusiness.Entities;
 using PizzaMtaani.CoreBusiness.Models;
 using PizzaMtaani.UseCases.ShoppingCart;
 using PizzaMtaani.UseCases.StateStore;
@@ -42,7 +43,7 @@ namespace PizzaMtaani.Components
 
         private async Task HandleDrop()
         {
-            await Container.AddPizzaTopping(Container.PizzaTopping);
+            await Container.OnAddPizzaTopping(Container.PizzaTopping);
         }     
 
         private void HandleDragEnter()

@@ -1,4 +1,5 @@
-﻿using PizzaMtaani.CoreBusiness.Models;
+﻿using PizzaMtaani.CoreBusiness.Entities;
+using PizzaMtaani.CoreBusiness.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

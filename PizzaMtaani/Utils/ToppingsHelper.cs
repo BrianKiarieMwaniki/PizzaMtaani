@@ -15,7 +15,7 @@
                 case "ham":
                     return "images/toppings/ham.png";
                 case "pineapple":
-                    return "images/toppings/cheese.png";
+                    return "images/toppings/pineapple.png";
                 case "sausage":
                     return "images/toppings/sausage.png";
                 case "feta cheese":

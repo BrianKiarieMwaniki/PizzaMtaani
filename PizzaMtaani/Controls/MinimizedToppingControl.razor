@@ -3,12 +3,12 @@
     <img class="minimized-topping__img" src="@ToppingsHelper.GetToppingImg(Topping.Name)" alt="topping" />
     <p class="minimized-topping__price">
         KES 
-        <span>@Topping?.SelectedPrice</span>
+        <span>@Topping?.Price</span>
     </p>
 </div>
 
 @code {
     [Parameter]
-    public PizzaTopping? Topping { get; set; }
+    public Topping? Topping { get; set; }
 
 }
