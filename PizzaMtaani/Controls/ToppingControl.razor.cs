@@ -12,9 +12,16 @@ namespace PizzaMtaani.Controls
         [Parameter]
         public PizzaTopping? Topping { get; set; }
 
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+
+            Topping.SelectedSize = Topping?.Prices.FirstOrDefault().Key;
+        }
+
         private void HandleDragStart(PizzaTopping topping)
         {
-            Container.PizzaTopping = topping;
+            Container.PizzaTopping = topping; 
         }
         
     }

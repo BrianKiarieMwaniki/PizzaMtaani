@@ -1,4 +1,6 @@
-﻿namespace PizzaMtaani.CoreBusiness.Models
+﻿using PizzaMtaani.CoreBusiness.Entities;
+
+namespace PizzaMtaani.CoreBusiness.Models
 {
     public class OrderLineItem
     {

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using PizzaMtaani.CoreBusiness.Entities;
 using PizzaMtaani.CoreBusiness.Models;
 
 namespace PizzaMtaani.Components
@@ -12,7 +13,7 @@ namespace PizzaMtaani.Components
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public EventCallback<PizzaTopping> OnPizzaToppingAdded { get; set; }
+        public EventCallback<PizzaTopping> PizzaToppingAdded { get; set; }
 
         public EventHandler? OnStateHasChanged { get; set; }
 
@@ -20,11 +21,11 @@ namespace PizzaMtaani.Components
         public PizzaTopping PizzaTopping { get; set; }
       
 
-        public async Task AddPizzaTopping(PizzaTopping topping)
+        public async Task OnAddPizzaTopping(PizzaTopping topping)
         {
-            Pizza.Toppings?.Add(topping);            
+            Pizza.AddTopping(topping);          
 
-            await OnPizzaToppingAdded.InvokeAsync();
+            await PizzaToppingAdded.InvokeAsync();
         }
     }
 }

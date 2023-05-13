@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using PizzaMtaani;
+using PizzaMtaani.CoreBusiness.Models;
 using PizzaMtaani.ShoppingCart;
 using PizzaMtaani.StateStore;
 using PizzaMtaani.UseCases.ShoppingCart;
@@ -12,6 +13,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+builder.Services.AddSingleton<PizzaTopping>();
 builder.Services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 builder.Services.AddScoped<IShoppingCart, ShoppingCart>();
 
