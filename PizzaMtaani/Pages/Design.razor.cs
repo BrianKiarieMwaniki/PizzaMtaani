@@ -20,11 +20,6 @@ namespace PizzaMtaani.Pages
             _pizza.Toppings = new List<Topping>();            
         }
 
-        private void HandleOnPizzaToppingAdded()
-        {
-            StateHasChanged();
-        }
-
         private void InitializeToppingList()
         {
             var cheeseToppings = new PizzaTopping

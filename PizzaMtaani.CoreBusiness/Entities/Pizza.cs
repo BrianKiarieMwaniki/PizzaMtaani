@@ -16,12 +16,7 @@ namespace PizzaMtaani.CoreBusiness.Entities
         {
             if (Toppings is null) return Price;
 
-            decimal netPrice = 0;
-            foreach (var topping in Toppings)
-            {
-                var toppingPrice = topping.Quantity * topping.Price;
-                netPrice += toppingPrice;
-            }
+            decimal netPrice = Toppings.Sum(t => t.Price * t.Quantity);
             netPrice += Price;
 
             return Math.Round(netPrice, 2);
@@ -62,6 +57,25 @@ namespace PizzaMtaani.CoreBusiness.Entities
                     Price = pizzaTopping.SelectedPrice
                 };
                 Toppings?.Add(topping);
+            }
+        }
+
+        public void UpdateToppingQuantity(Guid id,string size, string operation = "add")
+        {
+            var toppingToUpdate = Toppings?.Where(t => t.Id.Equals(id) && t.Size.Equals(size)).FirstOrDefault();
+
+            if (toppingToUpdate is null) return;
+
+            if(operation.Equals("add"))
+            {
+                toppingToUpdate.Quantity += 1;
+            }
+
+            if(operation.Equals("subtract"))
+            {
+                if (toppingToUpdate.Quantity == 0) return;
+
+                toppingToUpdate.Quantity -= 1;
             }
         }
 
