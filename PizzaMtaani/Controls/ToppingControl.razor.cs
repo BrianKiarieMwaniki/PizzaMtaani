@@ -19,9 +19,15 @@ namespace PizzaMtaani.Controls
             Topping.SelectedSize = Topping?.Prices.FirstOrDefault().Key;
         }
 
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            Topping.SelectedSize = Topping?.Prices.FirstOrDefault().Key;
+        }
+
         private void HandleDragStart(PizzaTopping topping)
         {
-            Container.PizzaTopping = topping; 
+            Container.PizzaTopping = topping;
         }
         
     }

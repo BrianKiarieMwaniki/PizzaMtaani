@@ -1,4 +1,4 @@
-﻿<div class="topping-control" draggable="true" title="@Topping.Name" @ondragstart="@(() => HandleDragStart(Topping))">
+﻿<div @key="@Topping.Id" class="topping-control" draggable="true" title="@Topping.Name" @ondragstart="@(() => HandleDragStart(Topping))">
     <div class="topping-control__title">
         <p>@Topping?.Name</p>
     </div>

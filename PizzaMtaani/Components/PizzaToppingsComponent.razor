@@ -11,7 +11,7 @@
                     foreach (var topping in _basicToppings)
                     {
                         <li>
-                            <ToppingControl Topping="topping" />
+                            <ToppingControl @key="topping.Id" Topping="topping" />
                         </li>
                     }
                 }
@@ -27,7 +27,7 @@
                     foreach (var topping in _deluxeToppings)
                     {
                         <li>
-                            <ToppingControl Topping="topping" />
+                            <ToppingControl @key="topping.Id" Topping="topping" />
                         </li>
                     }
                 }
