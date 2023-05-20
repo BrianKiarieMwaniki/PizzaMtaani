@@ -1,6 +1,15 @@
 ﻿<div class="minimized-topping">
+    <div class="minimized-topping__badge">
+        <button class="btn" @onclick="@(() => QuantityChanged.InvokeAsync(Topping))">
+            <svg class="btn__icon">
+                <use xlink:href="images/options.svg#icon-minus"></use>
+            </svg>
+        </button>
+        <span class="quantity">@Topping?.Quantity</span>
+    </div>
     <p class="minimized-topping__title">@Topping?.Name</p>
     <img class="minimized-topping__img" src="@ToppingsHelper.GetToppingImg(Topping.Name)" alt="topping" />
+    <p class="minimized-topping__size">@Topping?.Size</p>
     <p class="minimized-topping__price">
         KES 
         <span>@Topping?.Price</span>
@@ -10,5 +19,8 @@
 @code {
     [Parameter]
     public Topping? Topping { get; set; }
+
+    [Parameter]
+    public EventCallback<Topping> QuantityChanged { get; set; }
 
 }
