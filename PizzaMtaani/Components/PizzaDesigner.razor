@@ -18,13 +18,13 @@
             <div class="pizza-designer__topping-container">
                 @foreach (var topping in Pizza.Toppings)
                 {
-                    <MinimizedToppingControl Topping="topping"/>
+                    <MinimizedToppingControl Topping="topping" QuantityChanged="HandleQuantityChanged"/>
                 }
             </div>
         }
     </div>
     <div class="pizza-designer__actions">
-        <button class="btn btn-clear">Clear</button>
+        <button class="btn btn-clear" @onclick="HandleClear">Clear</button>
         <button class="btn btn-order" @onclick=HandlePizzaAddToCart>Add To Cart</button>
         <p class="price">
             KES <span>@Pizza.TotalNetPrice.ToString("0.00")</span>

@@ -56,7 +56,7 @@ body {
   }
 }
 .topping-control {
-  max-width: 24rem;
+  width: 16rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +76,7 @@ body {
 }
 .topping-control__img-holder img {
   background-color: inherit;
-  width: 12rem;
+  width: 8rem;
   height: auto;
 }
 .topping-control__price-selector {
@@ -102,7 +102,7 @@ body {
 }
 
 .minimized-topping {
-  width: 6rem;
+  width: 8.5rem;
   height: auto;
   border-radius: 4px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -111,12 +111,52 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0.25rem 0.75rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.minimized-topping__badge {
+  position: absolute;
+  width: auto;
+  top: -0.75rem;
+  right: -0.25rem;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.minimized-topping__badge .quantity, .minimized-topping__badge .btn {
+  color: #fff;
+}
+.minimized-topping__badge .quantity {
+  padding: 0 0.5rem;
+  border-radius: 5rem;
+  background-color: var(--primary-color);
+}
+.minimized-topping__badge .btn {
+  padding: 0.2rem 0.5rem;
+  background-color: #000;
+  margin-right: 0.25rem;
+  border-radius: 5rem;
+}
+.minimized-topping__badge .btn__icon {
+  background: #fff;
+  height: 0.2rem;
+  width: 0.8rem;
 }
 .minimized-topping__img {
   width: 4rem;
   height: auto;
 }
+.minimized-topping__size {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
 .minimized-topping__title {
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 .minimized-topping__price {

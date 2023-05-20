@@ -73,7 +73,11 @@ namespace PizzaMtaani.CoreBusiness.Entities
 
             if(operation.Equals("subtract"))
             {
-                if (toppingToUpdate.Quantity == 0) return;
+                if (toppingToUpdate.Quantity == 1)
+                {
+                    Toppings?.Remove(toppingToUpdate);
+                    return;
+                }
 
                 toppingToUpdate.Quantity -= 1;
             }

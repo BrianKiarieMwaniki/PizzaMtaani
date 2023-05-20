@@ -26,12 +26,12 @@ namespace PizzaMtaani.Components
             if (Container.Pizza != null)
             {
                 Pizza = Container.Pizza;
-            }            
+            }
         }
 
         private async void HandlePizzaAddToCart()
         {
-            if (Pizza != null) 
+            if (Pizza != null)
             {
                 Guid id = Guid.NewGuid();
                 Pizza.Id = id;
@@ -41,19 +41,32 @@ namespace PizzaMtaani.Components
             }
         }
 
+        private void HandleQuantityChanged(Topping topping)
+        {
+            Container.Pizza.UpdateToppingQuantity(topping.Id, topping.Size, "subtract");
+
+            Pizza = Container.Pizza;
+        }
+
+        private void HandleClear()
+        {
+            Container.Pizza.Toppings?.Clear();
+
+        }
+
         private async Task HandleDrop()
         {
             await Container.OnAddPizzaTopping(Container.PizzaTopping);
-        }     
+        }
 
         private void HandleDragEnter()
         {
 
         }
 
-        private void HandleDragLeave() 
+        private void HandleDragLeave()
         {
-            
+
         }
     }
 }
