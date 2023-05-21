@@ -1,0 +1,24 @@
+﻿<div class="order-item">
+    <p class="order-item__title">
+        @Item?.Pizza.Name
+    </p>
+    <p class="order-item__quantity">
+        @Item?.Quantity
+    </p>
+    <p class="order-item__price">
+        KES
+        <span>
+            @Item?.Price
+        </span>
+    </p>
+
+    <div class="order-item__actions">
+        <button class="btn" @onclick="RemoveOrderItem" disabled="@(isProcessing)">
+            <svg class="btn__icon">
+                <use xlink:href="images/options.svg#icon-bin"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+

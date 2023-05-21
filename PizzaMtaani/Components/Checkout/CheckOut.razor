@@ -1,0 +1,37 @@
+﻿<div class="checkout">
+    <div class="checkout__order-items">
+        @if (Order?.LineItems is not null)
+        {
+            foreach (var item in Order?.LineItems)
+            {
+                <OrderItem Item="item" />
+            }
+        }
+    </div>
+    <div class="checkout__prices">
+        <p class="price-text">
+            <span class="caption"></span>
+            <span class="price">
+                @Order?.LineItems?.Sum(i =>i.Price)
+            </span>
+        </p>
+        <p class="price-text">
+            <span class="caption">VAT</span>
+            <span class="price">
+                <strong>KES</strong>
+                @Order?.VAT
+            </span>
+        </p>
+        <p class="price-text">
+            <span class="caption">Total</span>
+            <span class="price">
+                <strong>KES</strong>
+                @Order?.Total
+            </span>
+        </p>
+    </div>
+    <div class="checkout__actions">
+        <button class="btn btn-success mt-5 px-2 w-100">PLACE ORDER</button>
+    </div>
+</div>
+

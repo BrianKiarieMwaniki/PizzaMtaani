@@ -26,7 +26,7 @@ namespace PizzaMtaani.ShoppingCart
             return order;
         }
 
-        public async Task<Order> DeletePizzaAsync(Guid pizzaId)
+        public async Task<Order> RemovePizzaFromOrder(Guid pizzaId)
         {
             var order = await GetOrder();
             order.RemovePizza(pizzaId);
@@ -55,7 +55,7 @@ namespace PizzaMtaani.ShoppingCart
             }
             else if (quantity == 0)
             {
-                return await DeletePizzaAsync(pizzaId);
+                return await RemovePizzaFromOrder(pizzaId);
             }
 
             var lineItem = order.LineItems.SingleOrDefault(x => x.PizzaId == pizzaId);
