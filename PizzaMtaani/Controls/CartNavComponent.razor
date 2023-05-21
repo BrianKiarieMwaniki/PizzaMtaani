@@ -1,6 +1,4 @@
-﻿@inject NavigationManager _navigationManager
-
-<button class="navbar-cart" @onclick="NavigateToOderPage">
+﻿<button class="navbar-cart" @onclick="ShowCheckoutPopup">
     <svg class="navbar-cart__icon">
         <use xlink:href="images/carts.svg#icon-cart"></use>
     </svg>
@@ -8,8 +6,14 @@
 </button>
 
 @code {
+    [Inject]
+    private IDialogService dialogService { get; set; }
+
     [Parameter]
     public int ItemsCount { get; set; }
 
-    private void NavigateToOderPage() => _navigationManager.NavigateTo("/order");
+    private void ShowCheckoutPopup()
+    {
+         dialogService.Show<CheckoutPopup>("Check Out");
+    }
 }

@@ -1,0 +1,20 @@
+﻿<MudDialog DisableSidePadding="true">
+    <DialogContent>
+        <CheckOut Order="order"/>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [Inject]
+    private IGetOrderUseCase getOrderUseCase { get; set; }
+
+    private Order? order;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        order = await getOrderUseCase.ExecuteAsync();
+    }
+
+}

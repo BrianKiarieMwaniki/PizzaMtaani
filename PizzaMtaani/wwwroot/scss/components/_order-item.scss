@@ -1,0 +1,44 @@
+﻿.order-item{
+    width: 100%;
+    min-height:10rem;
+    background-color: #fff;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+
+
+    &__title{
+        display: inline-block;
+        font-weight:700;
+    }
+
+    &__quantity{
+        color: var(--light-grey);
+    }
+
+    &__price{
+        font-size: 1.5rem;
+
+        & span{
+            color: var(--price-color);
+        }
+    }
+
+    &__actions{
+        & .btn{
+            margin-left: auto;
+            border:none;
+            cursor: pointer;
+
+            &:disabled{
+                cursor:no-drop;
+            }
+
+            &__icon{
+                height: 2rem;
+                width: 2rem;
+                fill: var(--primary-color);
+            }
+        }
+    }
+}

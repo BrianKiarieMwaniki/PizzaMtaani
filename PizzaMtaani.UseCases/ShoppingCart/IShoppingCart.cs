@@ -14,6 +14,6 @@ namespace PizzaMtaani.UseCases.ShoppingCart
         Task<Order> AddPizzaAsync(Pizza pizza);
         Task<Order> UpdateQuantityAsync(Guid pizzaId, int quantity);
         Task<Order> UpdateOrderAsync(Order order);
-        Task<Order> DeletePizzaAsync(Guid pizzaId);
+        Task<Order> RemovePizzaFromOrder(Guid pizzaId);
     }
 }
