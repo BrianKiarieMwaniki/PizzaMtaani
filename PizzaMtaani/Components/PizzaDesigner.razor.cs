@@ -38,6 +38,10 @@ namespace PizzaMtaani.Components
                 await _shoppingCart.AddPizzaAsync(Pizza);
 
                 _stateStore.UpdateLineItemsCount();
+
+                Pizza = new Pizza();
+
+                StateHasChanged();
             }
         }
 
@@ -46,6 +50,8 @@ namespace PizzaMtaani.Components
             Container.Pizza.UpdateToppingQuantity(topping.Id, topping.Size, "subtract");
 
             Pizza = Container.Pizza;
+
+            StateHasChanged();
         }
 
         private void HandleClear()

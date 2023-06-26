@@ -7,5 +7,13 @@ namespace PizzaMtaani.Components.Checkout
     {
         [Parameter]
         public Order? Order { get; set; }
+
+        [Parameter]
+        public EventCallback UIUpdate { get; set; }
+
+        private async Task HandleUIChange()
+        {
+            await UIUpdate.InvokeAsync();
+        }
     }
 }
