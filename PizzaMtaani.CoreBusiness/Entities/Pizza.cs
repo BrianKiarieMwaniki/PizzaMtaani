@@ -89,7 +89,8 @@ namespace PizzaMtaani.CoreBusiness.Entities
 
             var str = $"1 {Size}, {distinctToppings?.Count} Toppping Pizza - ";
 
-            if (Toppings is null) return str;
+            if (distinctToppings?.Count == 0) 
+                return $"1 {Size} Pizza";
 
             foreach (var topping in distinctToppings)
             {
