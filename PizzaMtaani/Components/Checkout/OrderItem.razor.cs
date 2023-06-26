@@ -15,12 +15,16 @@ namespace PizzaMtaani.Components.Checkout
         [Parameter]
         public OrderLineItem? Item { get; set; }
 
+        [Parameter]
+        public EventCallback UIChange { get; set; }
+
         private async Task RemoveOrderItem()
         {
             try 
             {
                 isProcessing = true;
                 await _removeOrderItemUseCase.ExecuteAsync(Item.PizzaId);
+                await UIChange.InvokeAsync();
             }
             finally
             {

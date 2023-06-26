@@ -1,19 +1,26 @@
 ﻿.order-item{
     width: 100%;
-    min-height:10rem;
+    min-height:6.5rem;
     background-color: #fff;
-    display:flex;
+    display:inline-flex;
     flex-direction:row;
     align-items: center;
+    justify-content: space-between;
+   
 
 
     &__title{
         display: inline-block;
         font-weight:700;
+        margin-left: .5rem;
+    }
+
+    p{
+        margin-bottom:0;
     }
 
     &__quantity{
-        color: var(--light-grey);
+        color: var(--dark-grey);
     }
 
     &__price{

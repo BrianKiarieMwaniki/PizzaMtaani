@@ -4,7 +4,7 @@
         {
             foreach (var item in Order?.LineItems)
             {
-                <OrderItem Item="item" />
+                <OrderItem Item="item" UIChange="HandleUIChange"/>
             }
         }
     </div>
